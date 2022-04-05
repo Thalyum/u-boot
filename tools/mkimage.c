@@ -108,7 +108,7 @@ static void usage(const char *msg)
 		"          -i => input filename for ramdisk file\n"
 		"          -E => place data outside of the FIT structure\n"
 		"          -B => align size in hex for FIT structure and header\n");
-#ifdef CONFIG_FIT_SIGNATURE
+#ifdef CONFIG_TOOLS_LIBCRYPTO
 	fprintf(stderr,
 		"Signing / verified boot options: [-k keydir] [-K dtb] [ -c <comment>] [-p addr] [-r] [-N engine]\n"
 		"          -k => set directory containing private keys\n"

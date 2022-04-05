@@ -1207,7 +1207,7 @@ int fit_add_verification_data(const char *keydir, const char *keyfile,
 	return 0;
 }
 
-#ifdef CONFIG_FIT_SIGNATURE
+#ifdef CONFIG_TOOLS_LIBCRYPTO
 int fit_check_sign(const void *fit, const void *key,
 		   const char *fit_uname_config)
 {

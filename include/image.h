@@ -1160,7 +1160,7 @@ int calculate_hash(const void *data, int data_len, const char *algo,
  * device
  */
 #if defined(USE_HOSTCC)
-# if defined(CONFIG_FIT_SIGNATURE)
+# if defined(CONFIG_TOOLS_LIBCRYPTO)
 #  define IMAGE_ENABLE_SIGN	1
 #  define FIT_IMAGE_ENABLE_VERIFY	1
 #  include <openssl/evp.h>
@@ -1397,7 +1397,7 @@ static inline int fit_image_check_target_arch(const void *fdt, int node)
  * device
  */
 #if defined(USE_HOSTCC)
-# if defined(CONFIG_FIT_CIPHER)
+# if defined(CONFIG_TOOLS_LIBCRYPTO)
 #  define IMAGE_ENABLE_ENCRYPT	1
 #  define IMAGE_ENABLE_DECRYPT	1
 #  include <openssl/evp.h>

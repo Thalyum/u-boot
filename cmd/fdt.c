@@ -644,7 +644,7 @@ static int do_fdt(struct cmd_tbl *cmdtp, int flag, int argc, char *const argv[])
 		fdt_chosen(working_fdt);
 		fdt_initrd(working_fdt, initrd_start, initrd_end);
 
-#if defined(CONFIG_FIT_SIGNATURE)
+#if CONFIG_IS_ENABLED(FIT_SIGNATURE)
 	} else if (strncmp(argv[1], "che", 3) == 0) {
 		int cfg_noffset;
 		int ret;
@@ -1085,7 +1085,7 @@ static char fdt_help_text[] =
 	"fdt rsvmem delete <index>           - Delete a mem reserves\n"
 	"fdt chosen [<start> <end>]          - Add/update the /chosen branch in the tree\n"
 	"                                        <start>/<end> - initrd start/end addr\n"
-#if defined(CONFIG_FIT_SIGNATURE)
+#if CONFIG_IS_ENABLED(FIT_SIGNATURE)
 	"fdt checksign [<addr>]              - check FIT signature\n"
 	"                                        <start> - addr of key blob\n"
 	"                                                  default gd->fdt_blob\n"
