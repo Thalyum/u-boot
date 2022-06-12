@@ -55,6 +55,11 @@ config TOOLS_FIT_SIGNATURE_MAX_SIZE
 	depends on TOOLS_FIT_SIGNATURE
 	default 0x10000000
 
+config TOOLS_FIT_CIPHER
+	def_bool y
+	help
+	  Enable encryption of FIT uImages in the tools builds
+
 config TOOLS_FIT_VERBOSE
 	def_bool y
 	help
