@@ -18,6 +18,16 @@
 #include <sys/ioctl.h>
 #endif
 
+/* definition to expand macro then apply to pragma message */
+#define VALUE_TO_STRING(x) #x
+#define VALUE(x) VALUE_TO_STRING(x)
+#define VAR_NAME_VALUE(var) #var "=" VALUE(var)
+
+/* Some example here */
+#pragma message(VAR_NAME_VALUE(CONFIG_FIT_CIPHER))
+#pragma message(VAR_NAME_VALUE(CONFIG_TOOLS_FIT_CIPHER))
+#pragma message(VAR_NAME_VALUE(CONFIG_IS_ENABLED(FIT_CIPHER)))
+
 static void copy_file(int, const char *, int);
 
 /* parameters initialized by core will be used by the image type code */
