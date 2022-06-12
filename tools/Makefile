@@ -164,14 +164,6 @@ ifneq ($(CONFIG_MX23)$(CONFIG_MX28)$(CONFIG_TOOLS_LIBCRYPTO),)
 HOSTCFLAGS_mxsimage.o += -DCONFIG_MXS
 endif
 
-ifdef CONFIG_TOOLS_LIBCRYPTO
-# This affects include/image.h, but including the board config file
-# is tricky, so manually define this options here.
-HOST_EXTRACFLAGS	+= -DCONFIG_FIT_SIGNATURE
-HOST_EXTRACFLAGS	+= -DCONFIG_FIT_SIGNATURE_MAX_SIZE=0xffffffff
-HOST_EXTRACFLAGS	+= -DCONFIG_FIT_CIPHER
-endif
-
 # MXSImage needs LibSSL
 ifneq ($(CONFIG_MX23)$(CONFIG_MX28)$(CONFIG_ARMADA_38X)$(CONFIG_TOOLS_LIBCRYPTO),)
 HOSTCFLAGS_kwbimage.o += \
