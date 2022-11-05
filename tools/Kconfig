@@ -41,12 +41,12 @@ config TOOLS_FIT_PRINT
 	  Print the content of the FIT verbosely in the tools builds
 
 config TOOLS_FIT_RSASSA_PSS
-	def_bool y
+	def_bool y if TOOLS_LIBCRYPTO
 	help
 	  Support the rsassa-pss signature scheme in the tools builds
 
 config TOOLS_FIT_SIGNATURE
-	def_bool y
+	def_bool y if TOOLS_LIBCRYPTO
 	help
 	  Enable signature verification of FIT uImages in the tools builds
 
@@ -56,7 +56,7 @@ config TOOLS_FIT_SIGNATURE_MAX_SIZE
 	default 0x10000000
 
 config TOOLS_FIT_CIPHER
-	def_bool y
+	def_bool y if TOOLS_LIBCRYPTO
 	help
 	  Enable encryption of FIT uImages in the tools builds
 
