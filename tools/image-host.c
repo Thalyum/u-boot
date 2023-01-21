@@ -1119,6 +1119,7 @@ static int fit_config_add_verification_data(const char *keydir,
 	return 0;
 }
 
+#if CONFIG_IS_ENABLED(FIT_SIGNATURE)
 /*
  * 0) open file (open)
  * 1) read certificate (PEM_read_X509)
@@ -1227,6 +1228,7 @@ int fit_pre_load_data(const char *keydir, void *keydest, void *fit)
  out:
 	return ret;
 }
+#endif
 
 int fit_cipher_data(const char *keydir, void *keydest, void *fit,
 		    const char *comment, int require_keys,
